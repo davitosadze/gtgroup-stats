@@ -66,7 +66,7 @@
                     <hr>
                     @foreach ($excavators as $excavator)
                         <p>{{ $excavator->name_eng }}-ს საშუალო წვა საათში</p>
-                        <p>{{ $excavator->name_eng }}-ს დაკლებული საწვავიs</p>
+                        <p>{{ $excavator->name_eng }}-ს დაკლებული საწვავი</p>
                     @endforeach
                 </form>
             </div>
