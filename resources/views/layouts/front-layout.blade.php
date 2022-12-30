@@ -6,10 +6,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <meta name="description" content="Albatross">
-    <meta name="keywords" content="Albatross">
+    <meta name="description" content="GTGROUP">
+    <meta name="keywords" content="GTGROUP">
     <meta name="author" content="PIXINVENT">
-    <title>@yield('title', 'Dashboard') - Albatross</title>
+    <title>@yield('title', 'Dashboard') - GTGROUP</title>
 
     <link rel="apple-touch-icon" href="{{ asset('theme/app-assets/images/ico/apple-icon-120.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('theme/app-assets/images/ico/favicon.ico') }}">
@@ -76,7 +76,7 @@
                             id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             <div class="user-nav d-sm-flex d-none"><span
-                                    class="user-name font-weight-bolder">Albatross</span><span
+                                    class="user-name font-weight-bolder">GTGROUP</span><span
                                     class="user-status">Admin</span></div>
                             <span class="avatar">
 
@@ -86,7 +86,7 @@
                                 </span>
                             </span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
+                        {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
@@ -98,7 +98,7 @@
                                 @csrf
                             </form>
 
-                        </div>
+                        </div> --}}
                     </li>
                 </ul>
             </div>
@@ -151,7 +151,7 @@
                                         </g>
                                     </g>
                                 </svg></span>
-                            <h2 class="brand-text">Albatross</h2>
+                            <h2 class="brand-text">GTGROUP</h2>
                         </a></li>
                     <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0"
                             data-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4"
@@ -171,12 +171,16 @@
                             data-feather="more-horizontal"></i>
                     </li>
 
-                    <li class="{{ request()->is('customers') ? 'active' : '' }}"><a class="d-flex align-items-center"
-                            href="#default"><i data-feather="user"></i><span class="menu-item text-truncate"
-                                data-i18n="Customers">Customers</span></a>
+                    <li class="{{ request()->is('information') ? 'active' : '' }}"><a
+                            class="d-flex align-items-center" href="{{ route('information.index') }}"><i
+                                data-feather="info"></i><span class="menu-item text-truncate"
+                                data-i18n="Customers">ინფორმაციის შეტანა</span></a>
                     </li>
 
-
+                    <li class="{{ request()->is('employers') ? 'active' : '' }}"><a class="d-flex align-items-center"
+                            href="{{ route('employers.index') }}"><i data-feather="info"></i><span
+                                class="menu-item text-truncate" data-i18n="Customers">თანამშრომლები</span></a>
+                    </li>
 
 
 
