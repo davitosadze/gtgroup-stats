@@ -35,33 +35,36 @@
 
                     </div>
 
-                    <p>ნამუშევარი დღეების რაოდენობა</p>
-                    <p>გატანილი კუბის რაოდენობა</p>
+                    <p>ნამუშევარი დღეების რაოდენობა - {{ $stats['days_count'] }}</p>
+                    <p>გატანილი კუბის რაოდენობა </p>
                     <p>გატანილი რეისების რაოდენობა</p>
 
                     <hr>
                     @foreach ($excavators as $excavator)
                         <p>{{ $excavator->name_eng }}-ს ტრაქტორების გახარჯული საწვავის რაოდენობა</p>
                     @endforeach
-                    <p>ტრაქტორების გახარჯული საწვავის რაოდენობა</p>
-                    <p>მანქანების გახარჯული საწვავის რაოდენობა</p>
+                    <p>ტრაქტორების გახარჯული საწვავის რაოდენობა: {{ $stats['loaded_fuel_excavators'] }}</p>
+                    <p>მანქანების გახარჯული საწვავის რაოდენობა: {{ $stats['loaded_fuel_trucks'] }}</p>
 
                     <hr>
-                    <p> საწვავის ხარჯი ჯამში - ლიტრებში</p>
-                    <p> საწვავის ხარჯი ჯამში - ლარებში</p>
+                    <p> საწვავის ხარჯი ჯამში - ლიტრებში: {{ $stats['total_fuel_expense'] }}</p>
+                    <p> საწვავის ხარჯი ჯამში - ლარებში: {{ $stats['total_fuel_expense_gel'] }}</p>
 
                     <hr>
                     @foreach ($part_providers as $provider)
-                        <p>{{ $provider->name_geo }} - შეძენილი ნაწილების ხარჯის ჯამი</p>
+                        <p>{{ $provider->name_geo }} - შეძენილი ნაწილების ხარჯის ჯამი:
+                            {{ $provider->calculateExpense($from_date, $to_date) }}</p>
                     @endforeach
                     <hr>
                     @foreach ($personal_cars as $car)
-                        <p>{{ $car->name }} - გახარჯული საწვავი ლარებში</p>
-                        <p>{{ $car->name }} - გახარჯული საწვავი ლიტრებში</p>
+                        <p>{{ $car->name }} - გახარჯული საწვავი ლარებში:
+                            {{ $car->calculateFuelExpense($from_date, $to_date) / 2 }}</p>
+                        <p>{{ $car->name }} - გახარჯული საწვავი ლიტრებში:
+                            {{ $car->calculateFuelExpense($from_date, $to_date) }}</p>
                         <hr>
                     @endforeach
                     <hr>
-                    <p>სხვა გაუთვალისწინებელი ხარჯი ლარებში</p>
+                    <p>სხვა გაუთვალისწინებელი ხარჯი ლარებში: {{ $stats['total_other_expense'] }}</p>
                     <p>გადასარიცხი თანხა ტრაქტორებზე</p>
                     <hr>
                     @foreach ($excavators as $excavator)

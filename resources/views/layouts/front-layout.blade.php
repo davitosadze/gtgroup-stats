@@ -164,8 +164,8 @@
             <div class="main-menu-content">
                 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                     <li class="{{ request()->is('/') ? 'active' : '' }}"><a class="d-flex align-items-center"
-                            href="{{ route('dashboard') }}"><i data-feather="circle"></i><span
-                                class="menu-item text-truncate" data-i18n="Dashboard">Dashboard</span></a>
+                            href="{{ route('stats.index') }}"><i data-feather="circle"></i><span
+                                class="menu-item text-truncate" data-i18n="Dashboard">მთავარი სტატისტიკა</span></a>
 
                     <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i
                             data-feather="more-horizontal"></i>

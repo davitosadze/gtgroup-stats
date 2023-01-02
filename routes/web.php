@@ -19,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 // Auth::routes(['register' => false]);
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/',  [StatsController::class, 'index'])->name('stats.index');
 
-Route::get('/stats', [StatsController::class, 'index'])->name('stats.index');
+// Route::get('/stats', [StatsController::class, 'index'])->name('stats.index');
 
 
 Route::get('/information', [InformationController::class, 'index'])->name('information.index');

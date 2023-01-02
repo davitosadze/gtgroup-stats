@@ -41,9 +41,10 @@ class InformationController extends Controller
         $stats["fuel_beginning_day"] = $date->fuel_beginning_day;
         $stats["purchased_fuel"] = $date->purchased_fuel;
         $stats["actual_fuel"] = $date->fuel_beginning_day - $spent_fuel;
+        $excavators = Excavator::all();
 
         // return $stats;
-        return view('admin.information.show', compact('date'));
+        return view('admin.information.show', compact('date', 'excavators'));
     }
 
     public function store(Request $request)
